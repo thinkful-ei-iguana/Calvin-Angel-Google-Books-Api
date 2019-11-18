@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import AddBookmark from "./addBookmark/addBookmark";
+import addBookmark from "./addBookmark/addBookmark";
 import BookmarkApp from "./bookmarkApp/bookmarkApp";
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
 
   render() {
     const page = this.state.showAddForm ? (
-      <AddBookmark />
+      <addBookmark />
     ) : (
       <BookmarkApp bookmarks={this.state.bookmarks} />
     );
