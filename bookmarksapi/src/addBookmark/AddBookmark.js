@@ -36,7 +36,7 @@ class addBookmark extends Component {
     e.preventDefault();
     const { title, url, description, rating } = this.state;
     const bookmark = { title, url, description, rating };
-    const url = "https://tf-ed-bookmarks-api.herokuapp.com/bookmarks";
+    const url = "https://tf-ed-bookmarks-api.herokuapp.com/bookmarks"
     const options = {
       method: "POST",
       body: JSON.stringify(bookmark),
@@ -45,7 +45,6 @@ class addBookmark extends Component {
         "Authorization" : "Bearer $2a$10$ZhdeJefcb.5sx/DCmO/n8u5sJLcARAdbHw9tfm1mevGRq3s1.5DpW"
       }
     };
-    
     fetch(url, options)
       .then(res => {
         if(!res.ok) {
@@ -66,7 +65,7 @@ class addBookmark extends Component {
           error: err.message
         });
       });
-  
+  }
 
   render() {
     const error = this.state.error
