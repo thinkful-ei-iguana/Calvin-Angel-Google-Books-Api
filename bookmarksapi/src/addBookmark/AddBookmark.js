@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./addBookmark.css";
 
-class AddBookmark extends Component {
+class addBookmark extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -70,7 +70,7 @@ class AddBookmark extends Component {
   render() {
     const error = this.state.error
       ? <div className="error">{this.state.error}</div>
-      : "",
+      : " ",
 
     return (
       <div className="addbookmark">
@@ -86,8 +86,15 @@ class AddBookmark extends Component {
             value={this.state.url}
             onChange={e => this.urlChanged(e.target.value)}
           />
-          <label htmlFor="url">Url:</label>
-          <input type="text" name="url" id="url" placeholder="url" />
+          <label htmlFor="url"> Url: </label>
+          <input 
+            type="text" 
+            name="url" 
+            id="url" 
+            placeholder="url"
+            value={this.state.url}
+            onChange={e => this.urlChanged(e.target.value)} 
+          />
           <label htmlFor="description">Description:</label>
           <textarea
             name="description"
@@ -96,7 +103,7 @@ class AddBookmark extends Component {
             value={this.state.description}
             onChange={e => this.descriptionChanged(e.target.value)}
           />
-          <label htmlFor="rating">Rating: </label>
+          <label htmlFor="rating"> Rating: </label>
           <input 
             type="number" 
             name="rating" 
@@ -106,7 +113,6 @@ class AddBookmark extends Component {
             value={this.state.rating}
             onChange={e => this.ratingChanged(e.target.value)} 
           />
-
           <div className="addbookmark__buttons">
             <button onClick={e => this.props.showForm(false)}> Cancel </button>
             <button type="submit"> Save </button>
@@ -117,4 +123,4 @@ class AddBookmark extends Component {
   }
 }
 
-export default AddBookmark;
+export default addBookmark;
